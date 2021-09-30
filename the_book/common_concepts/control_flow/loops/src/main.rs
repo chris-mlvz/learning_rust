@@ -21,13 +21,30 @@
 // }
 
 // * Conditional Loops with while
+// fn main() {
+//     let mut number = 3;
+//     while number != 0 {
+//         println!("{}", number);
+
+//         number -= 1;
+//     }
+
+//     println!("LIFTOFF!!!");
+// }
+
+// * Looping Through a Collection with for
+// fn main() {
+//     let a = [10, 20, 30, 40, 50];
+
+//     for elem in a.iter() {
+//         println!("the value is : {}", elem);
+//     }
+
+// }
+
 fn main() {
-    let mut number = 3;
-    while number != 0 {
-        println!("{}", number);
-
-        number -= 1;
+    for number in (1..4).rev() {
+        println!("{}!", number);
     }
-
     println!("LIFTOFF!!!");
 }
