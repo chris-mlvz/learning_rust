@@ -1,12 +1,21 @@
+// *The match Control Flow Operator
+
 fn main() {
     println!("{}", value_in_cents(Coin::Penny));
+    println!("{}", value_in_cents(Coin::Quarter(UsState::Alaska)));
+}
+
+#[derive(Debug)]
+enum UsState {
+    Alabama,
+    Alaska,
 }
 
 enum Coin {
     Penny,
     Nickel,
     Dime,
-    Quarter,
+    Quarter(UsState),
 }
 
 fn value_in_cents(coin: Coin) -> u8 {
@@ -17,6 +26,9 @@ fn value_in_cents(coin: Coin) -> u8 {
         }
         Coin::Nickel => 5,
         Coin::Dime => 10,
-        Coin::Quarter => 25,
+        Coin::Quarter(state) => {
+            println!("State quarter from {:?}!", state);
+            25
+        }
     }
 }
