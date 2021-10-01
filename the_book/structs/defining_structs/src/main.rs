@@ -28,11 +28,28 @@
 // }
 
 // * Using Tuple Structs without Named Fields to Create Different Types
-fn main() {
-    struct Color(i32, i32, i32);
-    struct Point(i32, i32, i32);
+// fn main() {
+//     struct Color(i32, i32, i32);
+//     struct Point(i32, i32, i32);
 
-    let black = Color(0, 0, 0);
-    let origin = Point(0, 0, 0);
-    println!("{},{}", black.0, origin.0);
-}
+//     let black = Color(0, 0, 0);
+//     let origin = Point(0, 0, 0);
+//     println!("{},{}", black.0, origin.0);
+// }
+
+// * Ownership of Struct Data
+// struct User {
+//     username: &str,
+//     email: &str,
+//     sign_in_count: u64,
+//     active: bool,
+// }
+
+// fn main() {
+//     let user1 = User {
+//         email: "someone@example.com",
+//         username: "someusername123",
+//         active: true,
+//         sign_in_count: 1,
+//     };
+// }
