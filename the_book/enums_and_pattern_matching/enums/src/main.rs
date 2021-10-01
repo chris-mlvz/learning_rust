@@ -11,21 +11,29 @@
 // }
 
 // * another example
-enum Message {
-    Quit,
-    Move { x: i32, y: i32 },
-    Write(String),
-    ChangeColor(i32, i32, i32),
-}
+// enum Message {
+//     Quit,
+//     Move { x: i32, y: i32 },
+//     Write(String),
+//     ChangeColor(i32, i32, i32),
+// }
 
-// * Methods on  enums
-impl Message {
-    fn call(&self) {
-        println!("{}", "hi");
-    }
-}
+// // * Methods on enums
+// impl Message {
+//     fn call(&self) {
+//         println!("{}", "hi");
+//     }
+// }
 
+// fn main() {
+//     let m = Message::Write(String::from("hello"));
+//     m.call();
+// }
+
+// * The Option Enum and Its Advantages Over Null Values
 fn main() {
-    let m = Message::Write(String::from("hello"));
-    m.call();
+    let x: i8 = 5;
+    let y: Option<i8> = Some(5);
+
+    // let sum = x + y;
 }
