@@ -29,11 +29,25 @@ fn main() {
     // let does_not_exit = v.get(100);
 
     // * inmutable borrow
-    let mut v = vec![1, 2, 3, 4, 5];
+    // let mut v = vec![1, 2, 3, 4, 5];
 
-    let first = &v[0];
+    // let first = &v[0];
 
-    v.push(6);
+    // v.push(6);
 
-    println!("The first element is: {}", first);
+    // println!("The first element is: {}", first);
+
+    // * Iterating over the values in a vector
+    // let v = vec![100, 32, 57];
+    // for i in &v {
+    //     println!("{}", i);
+    // }
+
+    // * Iterating over mutable references
+    let mut v = vec![100, 32, 57];
+    for i in &mut v {
+        *i += 50;
+        println!("{}", *i);
+    }
+    println!("{:?}", v);
 }
