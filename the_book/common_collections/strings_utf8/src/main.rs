@@ -36,4 +36,11 @@ fn main() {
     // * format macro
     let format_str = format!("{}-{}-{}", s2, s2, s3);
     println!("{}", format_str);
+
+    // ! INDEXING INTO STRINGS
+    let s1 = String::from("hello");
+    let h = s1[0];
+
+    let hello = "Здравствуйте";
+    let answer = &hello[0];
 }
