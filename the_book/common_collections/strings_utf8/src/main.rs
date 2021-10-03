@@ -45,7 +45,18 @@ fn main() {
     // let answer = &hello[0];
 
     // * Slicing Strings
-    let hello = "Здравствуйте";
-    let s = &hello[0..2];
-    println!("{}", s);
+    // let hello = "Здравствуйте";
+    // let s = &hello[0..2];
+    // println!("{}", s);
+
+    // * Methods for Iterating Over Strings
+    let s = String::from("नमस्ते🍕");
+    for c in s.chars() {
+        println!("{}", c);
+    }
+    for b in s.bytes() {
+        println!("{}", b);
+    }
+
+    println!("{} {}", s, s.len());
 }
