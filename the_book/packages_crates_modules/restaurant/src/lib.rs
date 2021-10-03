@@ -158,4 +158,15 @@
 // use std::io::{self, Write};
 
 // * The Glob Operator
-use std::collections::*;
+// use std::collections::*;
+
+// * Separating Modules into Different Files
+mod front_of_house;
+
+pub use crate::front_of_house::hosting;
+
+pub fn eat_at_restaurant() {
+  hosting::add_to_waitlist();
+  hosting::add_to_waitlist();
+  hosting::add_to_waitlist();
+}
