@@ -50,7 +50,7 @@ fn main() {
     // println!("{}", s);
 
     // * Methods for Iterating Over Strings
-    let s = String::from("नमस्ते🍕");
+    let s = "नमस्ते🍕ü";
     for c in s.chars() {
         println!("{}", c);
     }
