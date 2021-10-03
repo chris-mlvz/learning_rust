@@ -156,3 +156,6 @@
 
 // Nested path
 // use std::io::{self, Write};
+
+// * The Glob Operator
+use std::collections::*;
