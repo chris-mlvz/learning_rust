@@ -123,16 +123,36 @@
 // }
 
 // * Re-exporting Names with pub use
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
-    }
-}
+// mod front_of_house {
+//     pub mod hosting {
+//         pub fn add_to_waitlist() {}
+//     }
+// }
 
-pub use crate::front_of_house::hosting;
+// pub use crate::front_of_house::hosting;
 
-pub fn eat_at_restaurant() {
-    hosting::add_to_waitlist();
-    hosting::add_to_waitlist();
-    hosting::add_to_waitlist();
-}
+// pub fn eat_at_restaurant() {
+//     hosting::add_to_waitlist();
+//     hosting::add_to_waitlist();
+//     hosting::add_to_waitlist();
+// }
+
+// * Using External Packages
+// Filename: Cargo.toml
+
+// rand = "0.8.3"
+// use rand::Rng;
+
+// fn main() {
+//     let secret_number = rand::thread_rng().gen_range(1..101);
+// }
+
+// * Using Nested Paths to Clean Up Large use Lists
+// use std::{cmp::Ordering, io};
+
+// Normal path
+// use std::io;
+// use std::io::Write;
+
+// Nested path
+// use std::io::{self, Write};
