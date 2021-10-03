@@ -44,10 +44,28 @@ fn main() {
     // }
 
     // * Iterating over mutable references
-    let mut v = vec![100, 32, 57];
-    for i in &mut v {
-        *i += 50;
-        println!("{}", *i);
+    // let mut v = vec![100, 32, 57];
+    // for i in &mut v {
+    //     *i += 50;
+    //     println!("{}", *i);
+    // }
+    // println!("{:?}", v);
+
+    // * Using an Enum to Store Multiple Types
+    #[derive(Debug)]
+    enum SpreedsheetCell {
+        Int(i32),
+        Float(f64),
+        Text(String),
     }
-    println!("{:?}", v);
+
+    let row = vec![
+        SpreedsheetCell::Int(3),
+        SpreedsheetCell::Text(String::from("blue")),
+        SpreedsheetCell::Float(10.12),
+    ];
+
+    for elem in row {
+        println!("{:?}", elem);
+    }
 }
