@@ -33,4 +33,13 @@ fn main() {
     test_map.insert(String::from("Blue"), 25);
 
     println!("{:?}", test_map);
+
+    // * Only Inserting a Value if the Key Has No Value
+    let mut test_map1 = HashMap::new();
+    test_map1.insert(String::from("Blue"), 10);
+
+    test_map1.entry(String::from("Yellow")).or_insert(50);
+    test_map1.entry(String::from("Blue")).or_insert(50);
+
+    println!("{:?}", test_map1);
 }
