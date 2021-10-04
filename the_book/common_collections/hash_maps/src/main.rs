@@ -25,5 +25,12 @@ fn main() {
         Some(x) => println!("{}", x),
         None => println!("Error getting the value"),
     }
-    
+
+    // * Updating a Hash Map
+    // * Overwriting a Value
+    let mut test_map = HashMap::new();
+    test_map.insert(String::from("Blue"), 10);
+    test_map.insert(String::from("Blue"), 25);
+
+    println!("{:?}", test_map);
 }
