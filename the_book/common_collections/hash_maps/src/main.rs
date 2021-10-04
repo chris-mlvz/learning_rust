@@ -17,4 +17,13 @@ fn main() {
 
     let scores: HashMap<_, _> = teams.into_iter().zip(initial_scores.into_iter()).collect();
     println!("{:?}", scores);
+
+    // * Accessing Values in a Hash Map
+    let team_name = String::from("Blue");
+    let score = scores.get(&team_name);
+    match score {
+        Some(x) => println!("{}", x),
+        None => println!("Error getting the value"),
+    }
+    
 }
