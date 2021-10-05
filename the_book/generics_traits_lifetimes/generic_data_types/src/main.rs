@@ -48,18 +48,33 @@
 // fn main() {
 //     let wont_work = Point { x: 5, y: 4.0 };
 // }
-#[derive(Debug)]
-struct Point<T, U> {
-    x: T,
-    y: U,
+// #[derive(Debug)]
+// struct Point<T, U> {
+//     x: T,
+//     y: U,
+// }
+
+// fn main() {
+//     let both_integer = Point { x: 5, y: 10 };
+//     let both_float = Point { x: 1.0, y: 4.0 };
+//     let integer_and_float = Point { x: 5, y: 4.0 };
+
+//     println!("{:?}", both_integer);
+//     println!("{:?}", both_float);
+//     println!("{:?}", integer_and_float);
+// }
+
+// * In Enum Definitions
+fn main() {
+
 }
 
-fn main() {
-    let both_integer = Point { x: 5, y: 10 };
-    let both_float = Point { x: 1.0, y: 4.0 };
-    let integer_and_float = Point { x: 5, y: 4.0 };
+enum Option<T> {
+    Some(T),
+    None,
+}
 
-    println!("{:?}", both_integer);
-    println!("{:?}", both_float);
-    println!("{:?}", integer_and_float);
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
 }
