@@ -42,4 +42,8 @@ pub mod text {
             format!("@{}", self.username)
         }
     }
+
+    pub fn notify(item: &impl Summary) {
+        println!("Breaking news! {}", item.summarize());
+    }
 }

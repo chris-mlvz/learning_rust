@@ -1,4 +1,4 @@
-use traits::text::{NewsArticle, Summary, Tweet};
+use traits::text::{self, NewsArticle, Summary, Tweet};
 
 fn main() {
     let tweet = Tweet {
@@ -8,7 +8,7 @@ fn main() {
         retweet: false,
     };
     println!("1 new tweet: {}", tweet.summarize());
-    println!("1 new tweet: {}", tweet.summarize_author());
+    println!("{}", tweet.summarize_author());
 
     let article = NewsArticle {
         headline: String::from("Penguins win the Stanley Cup Championship!"),
@@ -21,4 +21,6 @@ fn main() {
     };
 
     println!("New article available! {}", article.summarize());
+
+    text::notify(&tweet);
 }
