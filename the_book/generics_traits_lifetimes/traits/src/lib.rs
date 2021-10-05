@@ -49,9 +49,9 @@ pub mod text {
     // }
 
     // * Trait Bound Syntax
-    // pub fn notify<T: Summary>(item: &T) {
-    //     println!("Breaking news! {}", item.summarize());
-    // }
+    pub fn notify<T: Summary>(item: &T) {
+        println!("Breaking news! {}", item.summarize());
+    }
 
     // * Two parameters with traits impl and trait bound syntax
 
@@ -64,4 +64,15 @@ pub mod text {
     // pub fn notify(item: &(impl Summary + Display)) {
     // pub fn notify<T: Summary + Display>(item: &T) {
 
+    // * Clearer Trait Bounds with where Clauses
+    // * Normal
+    // fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32 {
+    // }
+    // * Using where
+    // fn some_function<T, U>(t: &T, u: &U) -> i32
+    // where
+    //     T: Display + Clone,
+    //     U: Clone + Debug,
+    // {
+    // }
 }
