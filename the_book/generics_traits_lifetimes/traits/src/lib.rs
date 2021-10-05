@@ -49,7 +49,19 @@ pub mod text {
     // }
 
     // * Trait Bound Syntax
-    pub fn notify<T: Summary>(item: &T) {
-        println!("Breaking news! {}", item.summarize());
-    }
+    // pub fn notify<T: Summary>(item: &T) {
+    //     println!("Breaking news! {}", item.summarize());
+    // }
+
+    // * Two parameters with traits impl and trait bound syntax
+
+    // * Two parameters than implement Summary
+    // pub fn notify(item1: &impl Summary, item2: &impl Summary) {
+    // *Two parameters of the same type than implement Summary
+    // pub fn notify<T: Summary>(item1: &T, item2: &T) {
+
+    // * Specifying Multiple Trait Bounds with the + Syntax
+    // pub fn notify(item: &(impl Summary + Display)) {
+    // pub fn notify<T: Summary + Display>(item: &T) {
+
 }
