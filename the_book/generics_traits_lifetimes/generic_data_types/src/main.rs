@@ -65,16 +65,33 @@
 // }
 
 // * In Enum Definitions
+// fn main() {
+
+// }
+
+// enum Option<T> {
+//     Some(T),
+//     None,
+// }
+
+// enum Result<T, E> {
+//     Ok(T),
+//     Err(E),
+// }
+
+// * In Method Definitions
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
+impl<T> Point<T> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
+
 fn main() {
-
-}
-
-enum Option<T> {
-    Some(T),
-    None,
-}
-
-enum Result<T, E> {
-    Ok(T),
-    Err(E),
+    let p = Point { x: 5, y: 10 };
+    println!("p.x = {}", p.x());
 }
