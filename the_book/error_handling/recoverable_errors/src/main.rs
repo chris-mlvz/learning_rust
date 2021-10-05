@@ -82,24 +82,33 @@
 // }
 
 // * A Shortcut for Propagating Errors: the ? Operator
+// use std::fs::File;
+// use std::io::{self, Read};
+
+// fn main() {
+//     read_username_from_file().unwrap();
+//     read_username().unwrap();
+// }
+
+// fn read_username_from_file() -> Result<String, io::Error> {
+//     let mut f = File::open("hello.txt")?;
+//     let mut s = String::new();
+//     f.read_to_string(&mut s)?;
+//     Ok(s)
+// }
+
+// // * more simple
+// fn read_username() -> Result<String, io::Error> {
+//     let mut s = String::new();
+//     File::open("hello,=.txt")?.read_to_string(&mut s)?;
+//     Ok(s)
+// }
+
+// * Returning in main
+use std::error::Error;
 use std::fs::File;
-use std::io::{self, Read};
 
-fn main() {
-    read_username_from_file().unwrap();
-    read_username().unwrap();
-}
-
-fn read_username_from_file() -> Result<String, io::Error> {
-    let mut f = File::open("hello.txt")?;
-    let mut s = String::new();
-    f.read_to_string(&mut s)?;
-    Ok(s)
-}
-
-// * more simple
-fn read_username() -> Result<String, io::Error> {
-    let mut s = String::new();
-    File::open("hello,=.txt")?.read_to_string(&mut s)?;
-    Ok(s)
+fn main() -> Result<(), Box<dyn Error>> {
+    let f = File::open("hello.txt")?;
+    Ok(())
 }
