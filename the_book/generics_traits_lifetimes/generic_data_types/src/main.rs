@@ -126,3 +126,28 @@
 //         (self.x.powi(2) + self.y.powi(2)).sqrt()
 //     }
 // }
+
+// * Performance of Code Using Generics
+// fn main() {
+//     let integer = Some(5);
+//     let float = Some(5.0);
+// }
+
+// Rust compiles generic code into code that specifies the type in each
+// instance, we pay no runtime cost for using generics. When the code runs,
+// it performs just as it would if we had duplicated each definition by hand.
+
+enum Option_i32 {
+    Some(i32),
+    None,
+}
+
+enum Option_f64 {
+    Some(f64),
+    None,
+}
+
+fn main() {
+    let integer = Option_i32::Some(5);
+    let float = Option_f64::Some(5.0);
+}
