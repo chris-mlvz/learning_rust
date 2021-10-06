@@ -16,6 +16,9 @@ fn main() {
     let level = i.level();
     let announce = i.announce_and_return_part(first_sentence);
     println!("{}{}", level, announce);
+
+    // * The Static Lifetime
+    let s: &'static str = "I have a static lifetime.";
 }
 
 // * Lifetime Elision -  lifetime elision rules.
