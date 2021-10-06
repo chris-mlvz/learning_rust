@@ -26,19 +26,30 @@
 
 // * Generic Lifetimes in Functions
 fn main() {
+    // *1
     // let string1 = String::from("abcd");
     // let string2 = "xyz";
 
     // let result = longest(string1.as_str(), string2);
     // println!("The longest string is {}", result);
 
+    // *2
     let string1 = String::from("long string is long");
-    let result;
+
     {
         let string2 = String::from("xyz");
-        result = longest(string1.as_str(), string2.as_str());
+        let result = longest(string1.as_str(), string2.as_str());
+        println!("The longest string is {}", result);
     }
-    println!("The longest string is {}", result);
+
+    // *3 Error for lifetime
+    // let string1 = String::from("long string is long");
+    // let result;
+    // {
+    //     let string2 = String::from("xyz");
+    //     result = longest(string1.as_str(), string2.as_str());
+    // }
+    // println!("The longest string is {}", result);
 }
 
 // fn longest(x: &str, y: &str) -> &str {
