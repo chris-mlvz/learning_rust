@@ -12,6 +12,10 @@ fn main() {
     println!("{:?}", i);
     let first = first_word(first_sentence);
     println!("{}", first);
+
+    let level = i.level();
+    let announce = i.announce_and_return_part(first_sentence);
+    println!("{}{}", level, announce);
 }
 
 // * Lifetime Elision -  lifetime elision rules.
@@ -24,5 +28,16 @@ fn first_word(s: &str) -> &str {
         }
     }
 
-    &s[..]
+    s
+}
+
+impl<'a> ImportantExcerpt<'a> {
+    fn level(&self) -> i32 {
+        3
+    }
+
+    fn announce_and_return_part(&self, announcement: &str) -> &str {
+        println!("Attention please: {}", announcement);
+        self.part
+    }
 }
