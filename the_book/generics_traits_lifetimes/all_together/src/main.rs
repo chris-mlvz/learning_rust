@@ -24,4 +24,6 @@ fn main() {
 
     let result = longest_with_an_announcement(s1, s2, c);
     println!("The largest char is {}", result);
+
+    println!("test");
 }
