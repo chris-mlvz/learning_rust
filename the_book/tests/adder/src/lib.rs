@@ -51,10 +51,20 @@ mod tests {
     // }
 
     // * Checking for Panics with should_panic
+    // #[test]
+    // #[should_panic(expected = "Guess value must be less than or equal to 100")]
+    // fn greater_than_100() {
+    //     Guess::new(200);
+    // }
+
+    // * Using Result<T, E> in Tests
     #[test]
-    #[should_panic(expected = "Guess value must be less than or equal to 100")]
-    fn greater_than_100() {
-        Guess::new(200);
+    fn it_works() -> Result<(), String> {
+        if 2 + 2 == 4 {
+            Ok(())
+        } else {
+            Err(String::from("two plus twp does not equal four"))
+        }
     }
 }
 
@@ -77,21 +87,21 @@ mod tests {
 //     format!("Hello!")
 // }
 
-pub struct Guess {
-    value: i32,
-}
+// pub struct Guess {
+//     value: i32,
+// }
 
-impl Guess {
-    pub fn new(value: i32) -> Guess {
-        if value < 1 {
-            panic!(
-                "Guess value must be less than or equal to 100, got {}",
-                value
-            );
-        } else if value > 100 {
-            panic!("Guess value must be between 1 and 100, got {}.", value);
-        }
+// impl Guess {
+//     pub fn new(value: i32) -> Guess {
+//         if value < 1 {
+//             panic!(
+//                 "Guess value must be less than or equal to 100, got {}",
+//                 value
+//             );
+//         } else if value > 100 {
+//             panic!("Guess value must be between 1 and 100, got {}.", value);
+//         }
 
-        Guess { value }
-    }
-}
+//         Guess { value }
+//     }
+// }
