@@ -33,26 +33,42 @@
 // * Running a Subset of Tests by Name
 // $ cargo test one_hundred
 // $ cargo test add
-pub fn add_two(a: i32) -> i32 {
-    a + 2
-}
+// pub fn add_two(a: i32) -> i32 {
+//     a + 2
+// }
 
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+
+//     #[test]
+//     fn add_two_and_two() {
+//         assert_eq!(4, add_two(2));
+//     }
+
+//     #[test]
+//     fn add_three_and_two() {
+//         assert_eq!(5, add_two(3));
+//     }
+
+//     #[test]
+//     fn one_hundred() {
+//         assert_eq!(102, add_two(100));
+//     }
+// }
+
+// *Ignoring Some Tests Unless Specifically Requested
+// cargo test -- --ignored // Run only ignored test
 #[cfg(test)]
 mod tests {
-    use super::*;
-
     #[test]
-    fn add_two_and_two() {
-        assert_eq!(4, add_two(2));
+    fn it_works() {
+        assert_eq!(2 + 2, 4);
     }
 
     #[test]
-    fn add_three_and_two() {
-        assert_eq!(5, add_two(3));
-    }
-
-    #[test]
-    fn one_hundred() {
-        assert_eq!(102, add_two(100));
+    #[ignore]
+    fn expensive_test() {
+        // code that takes an hour to run
     }
 }
