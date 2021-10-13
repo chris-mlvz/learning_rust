@@ -9,3 +9,12 @@ license = "MIT OR Apache-2.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+# Publishing to Crates.io
+# cargo publish
+
+# Publishing a New Version of an Existing Crate
+# https://semver.org/
+
+# Removing Versions from Crates.io with cargo yank
+# cargo yank --vers 1.0.1
